@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Мои каникулы в Германии</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Добавлено -->
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background: linear-gradient(to right bottom, #ffb75b, #ffeea2, #ff8a80); /* Изменен задний фон */
+		}
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 2rem;
+		}
+		h1 {
+			font-size: 2.5rem;
+			color: #333;
+			margin-bottom: 1rem;
+			font-weight: bold; /* Добавлено */
+		}
+		h2 {
+			font-size: 2rem;
+			color: #333;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+			font-weight: bold; /* Добавлено */
+		}
+		p {
+			font-size: 1.1rem;
+			color: #333;
+			margin-bottom: 1.5rem;
+			font-weight: bold; /* Добавлено */
+		}
+		img {
+			width: 100%;
+			height: auto;
+			margin-bottom: 1.5rem;
+		}
+		.section {
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			padding: 2rem;
+			margin-bottom: 2rem;
+		}
+		.berlin {
+			background: linear-gradient(to bottom right, #ffb75b, #ffeea2); /* Изменен фон для Берлина */
+		}
+		.munich {
+			background: linear-gradient(to bottom right, #ffeea2, #ff8a80); /* Изменен фон для Мюнхена */
+		}
+		.dresden {
+			background: linear-gradient(to bottom right, #ff8a80, #ffb75b); /* Изменен фон для Дрездена */
+		}
+		.more-info {
+			display: none; /* По умолчанию скрыто */
+		}
+		button {
+			background-color: yellow; /* Цвет кнопки желтый */
+			color: black;
+			padding: 0.5rem 1rem;
+			border: none;
+			border-radius: 0.25rem;
+			cursor: pointer;
+		}
+        .created-by {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #333;
+            margin-top: 2rem;
+        }
+		@media (max-width: 767px) { /* Добавлено для адаптивности на мобильных устройствах */
+			h1 {
+				font-size: 2rem;
+			}
+			h2 {
+				font-size: 1.5rem;
+			}
+			p {
+				font-size: 1rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Мои каникулы в Германии</h1>
+		<div class="section berlin">
+            <h2>Берлин</h2>
+            <img src="berlin.jpg" alt="Берлин">
+            <p>Берлин - столица Германии, известный своей богатой историей и культурой. Я посетил множество достопримечательностей, таких как Бранденбургские ворота, Рейхстаг и Берлинскую стену.</p>
+            <button id="berlin-more">Узнать больше</button>
+            <div id="berlin-info" style="display: none;">
+                <p>Дополнительная информация о достопримечательностях Берлина:</p>
+                <ul>
+                    <li>Бранденбургские ворота - символ объединения Германии.</li>
+                    <li>Рейхстаг - здание парламента Германии с куполом, спроектированным Норманом Фостером.</li>
+                    <li>Берлинская стена - памятник холодной войны, разделявший Восточный и Западный Берлин.</li>
+                </ul>
+            </div>
+        </div>
+		<div class="section munich">
+			<h2>Мюнхен</h2>
+			<img src="minxen.jpg" alt="Мюнхен">
+            <button id="minxen-more">Узнать больше</button>
+			<p>Мюнхен - третий по величине город Германии, знаменитый своей архитектурой, пивными садами и ежегодним фестивалем Октоберфест.</p>
+            <div id="minxen-info" class="minxen-info" style="display: none;">
+                <p>Дополнительная информация о Мюнхене:</p>
+                <ul>
+                    <li>Марienplatz - центральная площадь города, где находится знаменитая Новая ратуша.</li>
+                    <li>Храм Frauenkirche - знаменитый собор с двумя башнями-близнецами.</li>
+                    <li>Английский сад - один из крупнейших городских парков в мире.</li>
+                </ul>
+            </div>
+		</div>
+		<div class="section dresden">
+			<h2>Дрезден</h2>
+			<img src="drezden.jpg" alt="Дрезден">
+            <button id="drezden-more">Узнать больше</button>
+			<p>Дрезден - город на реке Эльба, известный своей барочной архитектурой и произведениями искусства.</p>
+            <div id="drezden-info" class="drezden-info" style="display: none;">
+                <p>Дополнительная информация о Дрездене:</p>
+                <ul>
+                    <li>Фrauenkirche - знаменитая церковь, разрушенная во время Второй мировой войны и восстановленная в 2005 году.</li>
+                    <li>Зеленые своды - самый большой в мире фарфоровый дворец.</li>
+                    <li>Дрезденский замок - резиденция саксонских королей и курфюрстов.</li>
+                </ul>
+            </div>
+		</div>
+	</div>
+    <p class="created-by">© Created by Ponomarev Matvey 2023</p>
+</body>
+<script>
+    document.getElementById('berlin-more').addEventListener('click', function() {
+        var berlinInfo = document.getElementById('berlin-info');
+        if (berlinInfo.style.display === 'none') {
+            berlinInfo.style.display = 'block';
+        } else {
+            berlinInfo.style.display = 'none';
+        }
+    });
+    </script>
+<script>
+    document.getElementById('minxen-more').addEventListener('click', function() {
+        var berlinInfo = document.getElementById('minxen-info');
+        if (berlinInfo.style.display === 'none') {
+            berlinInfo.style.display = 'block';
+        } else {
+            berlinInfo.style.display = 'none';
+        }
+    });
+    </script>
+<script>
+    document.getElementById('drezden-more').addEventListener('click', function() {
+        var berlinInfo = document.getElementById('drezden-info');
+        if (berlinInfo.style.display === 'none') {
+            berlinInfo.style.display = 'block';
+        } else {
+            berlinInfo.style.display = 'none';
+        }
+    });
+    </script>
+</html>
